@@ -17,7 +17,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"]
 )
@@ -25,7 +25,10 @@ app.add_middleware(
 
 # Load saved model
 BASE_DIR = Path(__file__).resolve().parent
-model_data = joblib.load(BASE_DIR / "loan_default_model.pkl")
+model_data = joblib.load(
+    BASE_DIR / "loan_default_model.pkl",
+    mmap_mode="r"
+)
 
 model = model_data["model"]
 encoders = model_data["encoders"]
