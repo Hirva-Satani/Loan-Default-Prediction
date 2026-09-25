@@ -1,0 +1,25 @@
+# Python virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VS Code / Antigravity
+.vscode/
+
+# React dependencies
+ML_Frontend/node_modules/
+
+# React build output
+ML_Frontend/dist/
+
+# Environment variables
+.env
+.env.*
+ML_Frontend/.env
+ML_Frontend/.env.*
+
+# OS generated files
+.DS_Store
+Thumbs.db
